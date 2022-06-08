@@ -223,7 +223,15 @@ function doAction(actionType){
 			break;
 			
 		case "fontIncrease":
-			document.body.style.fontSize="20pt";
+			document.body.style.fontSize = "20pt";
+			break;
+		
+		case "fontDecrease":
+			document.body.style.fontSize = "8pt";
+			break;
+			
+		case "changeBkg":
+			document.body.style.background = "orange";
 			break;
 	}
 }
@@ -294,15 +302,17 @@ function doAction(actionType){
 
 <br />
 
-<div id="custommenu" style="width: 250px; height; 80px;visibility: hidden;">
+<div id="custommenu" style="border: 1px; width: 250px; height; 80px;visibility: hidden;">
 
 <div style="background-Color: silver; color: navy; font-Size: 10pt;" onclick="doAction('copy');">Copy Document</div>
 
 <div style="background-Color: silver; color: navy; font-Size: 10pt;" onclick="doAction('close');">Close Window</div>
 
-<div style="background-Color: silver; color: navy; font-Size: 10pt;" onclick="doAction('fontIncrease');">Increase font</div>
+<div style="background-Color: silver; color: navy; font-Size: 10pt;" onclick="doAction('fontIncrease');">Increase Font</div>
 
-<div style="background-Color: silver; color: navy; font-Size: 10pt;" onclick="doAction('changeBkg');">Change background</div>
+<div style="background-Color: silver; color: navy; font-Size: 10pt;" onclick="doAction('fontDecrease');">Decrease Font</div>
+
+<div style="background-Color: silver; color: navy; font-Size: 10pt;" onclick="doAction('changeBkg');">Change Background</div>
 
 </div>
 
