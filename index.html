@@ -65,6 +65,19 @@ function MyFunction6(){
 	}
 }
 
+function MyFunction7(){
+	const date = new Date(2022, 8, 8);
+	
+	const day = date.getDate();
+	const month = date.getMonth() + 1;
+	const year = date.getYear();
+	
+	const str = `${day}/${month}/${year}`;
+	
+	window.alert(str);
+	
+}
+
 </script>
 
 <button onclick = "MyFunction()">Example 1</button>
@@ -78,6 +91,8 @@ function MyFunction6(){
 <button onclick = "MyFunction5()">Space Deleter</button>
 
 <button onclick = "MyFunction6()">Email Checker</button>
+
+<button onclick = "MyFunction7()">Date and Time</button>
 
 </body>
 </html>
