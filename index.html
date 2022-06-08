@@ -197,6 +197,36 @@ function checkSymbol(kc) {
 	return true;
 }
 
+function showCustomMenu(sign, x, y){
+	var cm = document.getElementById("custommenu");
+	
+	if(sign)
+		cm.style.visibility = 'visible';
+	else
+		cm.style.visibility = 'hidden';
+	
+	cm.style.position = 'absolute';
+	cm.style.left = x;
+	cm.style.top = y;
+}
+
+function doAction(actionType){
+
+	switch(actionType){
+	
+		case "copy":	
+			break;
+			
+		case "close":
+		window.close();
+			break;
+			
+		case "fontIncrease":
+			document.body.style.fontSize="20pt";
+			break;
+	}
+}
+
 </script>
 
 <button onclick = "MyFunction()">Example1</button>
@@ -254,8 +284,29 @@ function checkSymbol(kc) {
 <img onmouseout = "ChangeImage1()" onmouseover = "ChangeImage2()" id = "myImg" src = "kavyn.png">
 
 <br />
+<br />
+<br />
+<br />
+<br />
 
 <input type = "text" onkeypress = "return checkSymbol(event.keyCode);">
+
+<br />
+
+<div id="custommenu" style="width: 250px; height; 80px;visibility: hidden;">
+
+<div style="background-Color: silver; color: navy; font-Size: 10pt;" onclick="doAction('copy');">Copy Document</div>
+
+<div style="background-Color: silver; color: navy; font-Size: 10pt;" onclick="doAction('close');">Close Window</div>
+
+<div style="background-Color: silver; color: navy; font-Size: 10pt;" onclick="doAction('fontIncrease');">Increase font</div>
+
+<div style="background-Color: silver; color: navy; font-Size: 10pt;" onclick="doAction('changeBkg');">Change background</div>
+
+</div>
+
+oncontextmenu = "showCustomMenu(true, event.clientX, event.clientY); return false"
+onclick = "showCustomMenu(false, event.clientX, event.clientY); return false;"
 
 </body>
 </html>
