@@ -128,6 +128,13 @@ function MyFunction11(){
 	}
 }
 
+function MyFunction12(){
+	var input = isnumber.value;
+	if(isNaN(input) == 0){
+		window.alert("Input is a number.");
+	}
+}
+
 </script>
 
 <button onclick = "MyFunction()">Example 1</button>
@@ -154,15 +161,19 @@ function MyFunction11(){
 
 <ul>
 
-<li><input type = "number" id = "hour1" placeholder = "Enter hour1"></li>
+<li><input type = "number" min = "0" max = "24" id = "hour1" placeholder = "Enter hour1"></li>
 
-<li><input type = "number" id = "minutes1" placeholder = "Enter minutes1"></li>
+<li><input type = "number" min = "0" max = "60" id = "minutes1" placeholder = "Enter minutes1"></li>
 
-<li><input type = "number" id = "hour2" placeholder = "Enter hour2"></li>
+<li><input type = "number" min = "0" max = "24" id = "hour2" placeholder = "Enter hour2"></li>
 
-<li><input type = "number" id = "minutes2" placeholder = "Enter minutes2"></li>
+<li><input type = "number" min = "0" max = "60" id = "minutes2" placeholder = "Enter minutes2"></li>
 
 </ul>
+
+<button onclick = "MyFunction12()">IsNumber?</button>
+
+<input type = "text" id = "isnumber" placeholder = "Enter text (or number?????)">
 
 </body>
 </html>
