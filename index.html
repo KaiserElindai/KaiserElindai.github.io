@@ -44,11 +44,25 @@ function MyFunction4(){
 }
 
 function MyFunction5(){
-	var text = "Deleting         consecutive      spaces     is     nice thing         to do,      thank you.";
+	var text = "Deleting         consecutive      spaces     is         a   nice thing         to do,      thank you.";
+	window.alert("Original text: " + text);
 	for(let i = 0; i < 10; i++){
 		text = text.replaceAll('  ', ' ');
 	}
-	window.alert(text);
+	window.alert("Deleted spaces: " + text);
+}
+
+function MyFunction6(){
+	var text = "vovkKavynenko@gmail.com";
+	window.alert("Email: " + text);
+	var ind1 = text.indexOf("@");
+	var ind2 = text.indexOf(".");
+	if(ind2 != -1 && ind2 > ind1 + 1){
+		window.alert("Email is alright");
+	}
+	else {
+		window.alert("Email is not alright");
+	}
 }
 
 </script>
@@ -62,6 +76,8 @@ function MyFunction5(){
 <button onclick = "MyFunction4()">Example1 remade</button>
 
 <button onclick = "MyFunction5()">Space Deleter</button>
+
+<button onclick = "MyFunction6()">Email Checker</button>
 
 </body>
 </html>
