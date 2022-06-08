@@ -2,7 +2,9 @@
 <html>
 <body>
 <h1>Maksym Franchevskyy</h1>
+
 <script type = "text/javascript">
+
 function MyFunction(){
 	var text1 = "some text";
 	var ind1 = text1.indexOf("m");
@@ -14,22 +16,29 @@ function MyFunction(){
 	var ind4 = text1.indexOf("text");
 	window.alert("in 'some text' the character text starts at " + ind4);
 }
-	function MyFunction2(){
+
+function MyFunction2(){
 	var text1 = "some text";
 	var ind1 = text1.lastIndexOf("m");
 	window.alert("in 'some text' the last character m is " + ind1);
 	var ind2 = text1.lastIndexOf("e");
-	window.alert("in 'some text' the last character e is " + ind1);
+	window.alert("in 'some text' the last character e is " + ind2);
 	var ind3 = text1.lastIndexOf("mt");
-	window.alert("in 'some text' the last character mt is " + ind1);
+	window.alert("in 'some text' the last character mt is " + ind3);
 }
+
+function MyFunction3(){
+	var text2 = "1234567890123";
+	var ch = text2.charArt(9);
+}
+
 </script>
 
 <button onclick = "MyFunction()">Example 1</button>
 
 <button onclick = "MyFunction2()">Example2</button>
 
-
+<button onclick = "MyFunction3()">Example3</button>
 
 </body>
 </html>
