@@ -29,7 +29,17 @@ function MyFunction2(){
 
 function MyFunction3(){
 	var text2 = "1234567890123";
-	var ch = text2.charArt(9);
+	var ch = text2.charAt(9);
+}
+
+function MyFunction4(){
+	var text3 = "3,14";
+	if(text3.indexOf(".") == 1 || text3.indexOf(",")  == 1){
+		window.alert("The number is a fraction");
+	}
+	else {
+		window.alert("The number is not a fraction");
+	}
 }
 
 </script>
@@ -39,6 +49,8 @@ function MyFunction3(){
 <button onclick = "MyFunction2()">Example2</button>
 
 <button onclick = "MyFunction3()">Example3</button>
+
+<button onclick = "MyFunction4()">Example1 remade</button>
 
 </body>
 </html>
