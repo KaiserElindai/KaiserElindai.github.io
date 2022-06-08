@@ -147,17 +147,17 @@ function MyFunction13(){
 }
 
 function MyFunction14(){
-	var side1 = a.value;
-	var side2 = b.value;
+	var a = side1.value;
+	var b = side2.value;
 	
-	var side3 = Math.round(Math.sqrt(Math.pow(a,2) + Math.pow(b,2)));
+	var c = Math.round(Math.sqrt(Math.pow(a,2) + Math.pow(b,2)));
 	
-	window.alert("The hypotenuse is: " + side3);
+	window.alert("The hypotenuse is: " + c);
 }
 
 </script>
 
-<button onclick = "MyFunction()">Example 1</button>
+<button onclick = "MyFunction()">Example1</button>
 <br />
 <button onclick = "MyFunction2()">Example2</button>
 <br />
@@ -179,17 +179,13 @@ function MyFunction14(){
 <br />
 <button onclick = "MyFunction11()">Time Difference</button>
 
-<ul>
+<input type = "number" min = "0" max = "24" id = "hour1" placeholder = "Enter hour1">
 
-<li><input type = "number" min = "0" max = "24" id = "hour1" placeholder = "Enter hour1"></li>
+<input type = "number" min = "0" max = "60" id = "minutes1" placeholder = "Enter minutes1">
 
-<li><input type = "number" min = "0" max = "60" id = "minutes1" placeholder = "Enter minutes1"></li>
+<input type = "number" min = "0" max = "24" id = "hour2" placeholder = "Enter hour2">
 
-<li><input type = "number" min = "0" max = "24" id = "hour2" placeholder = "Enter hour2"></li>
-
-<li><input type = "number" min = "0" max = "60" id = "minutes2" placeholder = "Enter minutes2"></li>
-
-</ul>
+<input type = "number" min = "0" max = "60" id = "minutes2" placeholder = "Enter minutes2">
 <br />
 <button onclick = "MyFunction12()">IsNumber?</button>
 
@@ -199,13 +195,11 @@ function MyFunction14(){
 <br />
 <button onclick = "MyFunction14()">Geometry 7th yeah (probably)</button>
 
-<ul>
+<input type = "number" id = "side1" placeholder = "Enter side">
 
-<li><input type = "number" id = "a" placeholder = "Enter side"></li>
+<input type = "number" id = "side2" placeholder = "Enter side">
 
-<li><input type = "number" id = "b" placeholder = "Enter side"></li>
 
-</ul>
 
 </body>
 </html>
