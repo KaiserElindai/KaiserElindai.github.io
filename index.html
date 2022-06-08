@@ -5,6 +5,7 @@
 
 <script type = "text/javascript">
 
+//LR7
 function MyFunction(){
 	var text1 = "some text";
 	
@@ -180,6 +181,19 @@ function MyFunction14(){
 	window.alert("The hypotenuse is: " + c);
 }
 
+//LR8
+
+function ChangeImage1(){
+	document.getElementById("myImg").src = "coatOfArms.png";
+}
+
+function ChangeImage2(){
+	document.getElementById("myImg").src = "byb.jpg";
+}
+
+
+
+
 </script>
 
 <button onclick = "MyFunction()">Example1</button>
@@ -231,6 +245,10 @@ function MyFunction14(){
 <br />
 
 <h2>LR8</h2>
+
+<br />
+
+<img onmouseout = "ChangeImage1()" onmouseover = "ChangeImage2()" id = "myImg">
 
 </body>
 </html>
