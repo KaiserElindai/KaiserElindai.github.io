@@ -191,8 +191,14 @@ function ChangeImage2(){
 	document.getElementById("myImg").src = "byb.jpg";
 }
 
-
-
+function checkSymbol(kc) {
+	if(kc < 48 || kc > 57){
+		return false;
+	}
+	esle {
+		return true;
+	}
+}
 
 </script>
 
@@ -249,6 +255,10 @@ function ChangeImage2(){
 <br />
 
 <img onmouseout = "ChangeImage1()" onmouseover = "ChangeImage2()" id = "myImg" src = "kavyn.png">
+
+<br />
+
+<input type = "text" onkeypress = "return checkSymbol(event.keyCode);">
 
 </body>
 </html>
