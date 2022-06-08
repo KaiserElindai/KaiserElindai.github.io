@@ -86,6 +86,48 @@ function MyFunction8(){
 	window.alert(date.getDay());
 }
 
+function MyFunction9(){
+	var date1 = new Date("October 25, 2012");
+	var date2 = new Date("October 25, 2010");
+	var date3 = new Date("October 25, 1997");
+	var date4 = new Date("October 25, 1984");
+	
+	window.alert(date1.getDay());
+	window.alert(date2.getDay());
+	window.alert(date3.getDay());
+	window.alert(date4.getDay());
+}
+
+function MyFunction10(){
+	var date = new Date("October 25, 2025");
+	window.alert(date.getDay());
+}
+
+function MyFunction11(){
+	var h1 = hour1.value;
+	var m1 = minutes1.value;
+	var h2 = hour2.value;
+	var m2 = minutes2.value;
+	
+	let date1 = new Date(2022, 08, 08, h1, m1);
+	let date2 = new Date(2022, 08, 08, h2, m2);
+	
+	let difference = date1.getTime() - date2.getTime();
+	
+	if(difference < 0){
+		window.alert("Попавсь! Година1 повинна бути більшою за годину2 ");
+	}
+	else {
+		difference = difference / 1000;
+		let hourDifference = Math.floor(difference / 3600);
+		difference -= hourDifference * 3600;
+		let minuteDifference = Math.floor(difference / 60);
+		difference -= minuteDifference * 60;
+		
+		window.alert("The difference is: " + ${hourDifference} " hours " + ${minuteDifference} + "minutes");
+	}
+}
+
 </script>
 
 <button onclick = "MyFunction()">Example 1</button>
@@ -103,6 +145,24 @@ function MyFunction8(){
 <button onclick = "MyFunction7()">Date and Time</button>
 
 <button onclick = "MyFunction8()">Birthday</button>
+
+<button onclick = "MyFunction9()">Birthday a lot of years ago</button>
+
+<button onclick = "MyFunction10()">Future Birthday</button>
+
+<button onclick = "MyFunction11()">Time Difference</button>
+
+<ul>
+
+<li><input type = "number" id = "hour1" placeholder = "Enter hour1"></li>
+
+<li><input type = "number" id = "minutes1" placeholder = "Enter minutes1"></li>
+
+<li><input type = "number" id = "hour2" placeholder = "Enter hour2"></li>
+
+<li><input type = "number" id = "minutes2" placeholder = "Enter minutes2"></li>
+
+</ul>
 
 </body>
 </html>
