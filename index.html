@@ -30,16 +30,25 @@ function MyFunction2(){
 function MyFunction3(){
 	var text2 = "1234567890123";
 	var ch = text2.charAt(9);
+	window.alert("9th character in '1234567890123' is " + ch);
 }
 
 function MyFunction4(){
 	var text3 = "3,14";
 	if(text3.indexOf(".") == 1 || text3.indexOf(",")  == 1){
-		window.alert("The number is a fraction");
+		window.alert("The number" + text3 + "is a fraction");
 	}
 	else {
-		window.alert("The number is not a fraction");
+		window.alert("The number" + text3 + "is not a fraction");
 	}
+}
+
+function MyFunction5(){
+	var text = "Deleting         consecutive      spaces     is     nice thing         to do,      thank you.";
+	for(let i = 0; i < 10; i++){
+		text = text.replaceAll('  ', ' ');
+	}
+	window.alert(text);
 }
 
 </script>
@@ -51,6 +60,8 @@ function MyFunction4(){
 <button onclick = "MyFunction3()">Example3</button>
 
 <button onclick = "MyFunction4()">Example1 remade</button>
+
+<button onclick = "MyFunction5()">Space Deleter</button>
 
 </body>
 </html>
