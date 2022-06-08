@@ -2,7 +2,9 @@
 <html>
 <body>
 <h1>Maksym Franchevskyy</h1>
+<button onclick = "MyFunction()">Example 1</button>
 <script type = "text/javascript">
+function MyFunction(){
 var text1 = "some text";
 var ind1 = text1.indexOf("m");
 window.alert("in 'some text' the character m is " + ind1);
@@ -10,7 +12,8 @@ var ind2 = text1.indexOf("e");
 window.alert("in 'some text' the character e is " + ind2);
 var ind3 = text1.indexOf("mt");
 window.alert("in 'some text' the character mt is " + ind3);
-var ind3 = text1.indexOf("text");
+var ind4 = text1.indexOf("text");
 window.alert("in 'some text' the character text starts at " + ind4);
+}
 </body>
 </html>
