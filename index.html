@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
-<body>
+<body oncontextmenu = "showCustomMenu(true, event.clientX, event.clientY); return false"
+onclick = "showCustomMenu(false, event.clientX, event.clientY); return false;">
 <h1>LR7</h1>
 
 <script type = "text/javascript">
@@ -305,8 +306,7 @@ function doAction(actionType){
 
 </div>
 
-<div>oncontextmenu = "showCustomMenu(true, event.clientX, event.clientY); return false"</div>
-<div>onclick = "showCustomMenu(false, event.clientX, event.clientY); return false;"</div>
+
 
 </body>
 </html>
