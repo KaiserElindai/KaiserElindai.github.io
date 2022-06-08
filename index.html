@@ -133,6 +133,26 @@ function MyFunction12(){
 	if(isNaN(input) == 0){
 		window.alert("Input is a number.");
 	}
+	else {
+		window.alert("Input is not a number");
+	}
+}
+
+function MyFunction13(){
+	var num = 2022 + 10 + 25;
+	
+	window.alert("Funny Birthday Number in decimal: " + num);
+	window.alert("Funny Birthday Number in binary: " + num.toString(2));
+	window.alert("Funny Birthday Number in hexadecimal: " + num.toString(16));
+}
+
+function MyFunction14(){
+	var side1 = a.value;
+	var side2 = b.value;
+	
+	var side3 = Math.round(Math.sqrt(Math.pow(a,2) + Math.pow(b,2)));
+	
+	window.alert("The hypotenuse is: " + side3);
 }
 
 </script>
@@ -174,6 +194,18 @@ function MyFunction12(){
 <button onclick = "MyFunction12()">IsNumber?</button>
 
 <input type = "text" id = "isnumber" placeholder = "Enter text (or number?????)">
+
+<button onclick = "MyFunction13()">Funny Birthday Numbers</button>
+
+<button onclick = "MyFunction14()">Geometry 7th yeah (probably)</button>
+
+<ul>
+
+<li><input type = "number" id = "a" placeholder = "Enter side"></li>
+
+<li><input type = "number" id = "b" placeholder = "Enter side"></li>
+
+</ul>
 
 </body>
 </html>
