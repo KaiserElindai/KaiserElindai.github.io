@@ -7,34 +7,51 @@
 
 function MyFunction(){
 	var text1 = "some text";
+	
 	var ind1 = text1.indexOf("m");
+	
 	window.alert("in 'some text' the character m is " + ind1);
+	
 	var ind2 = text1.indexOf("e");
+	
 	window.alert("in 'some text' the character e is " + ind2);
+	
 	var ind3 = text1.indexOf("mt");
+	
 	window.alert("in 'some text' the character mt is " + ind3);
+	
 	var ind4 = text1.indexOf("text");
+	
 	window.alert("in 'some text' the character text starts at " + ind4);
 }
 
 function MyFunction2(){
 	var text1 = "some text";
+	
 	var ind1 = text1.lastIndexOf("m");
+	
 	window.alert("in 'some text' the last character m is " + ind1);
+	
 	var ind2 = text1.lastIndexOf("e");
+	
 	window.alert("in 'some text' the last character e is " + ind2);
+	
 	var ind3 = text1.lastIndexOf("mt");
+	
 	window.alert("in 'some text' the last character mt is " + ind3);
 }
 
 function MyFunction3(){
 	var text2 = "1234567890123";
+	
 	var ch = text2.charAt(9);
+	
 	window.alert("9th character in '1234567890123' is " + ch);
 }
 
 function MyFunction4(){
 	var text3 = "3,14";
+	
 	if(text3.indexOf(".") == 1 || text3.indexOf(",")  == 1){
 		window.alert("The number " + text3 + " is a fraction");
 	}
@@ -45,18 +62,24 @@ function MyFunction4(){
 
 function MyFunction5(){
 	var text = "Deleting         consecutive      spaces     is         a   nice thing         to do,      thank you.";
+	
 	window.alert("Original text: " + text);
+	
 	for(let i = 0; i < 10; i++){
 		text = text.replaceAll('  ', ' ');
 	}
+	
 	window.alert("Deleted spaces: " + text);
 }
 
 function MyFunction6(){
 	var text = "vovkKavynenko@gmail.com";
+	
 	window.alert("Email: " + text);
+	
 	var ind1 = text.indexOf("@");
 	var ind2 = text.indexOf(".");
+	
 	if(ind2 != -1 && ind2 > ind1 + 1){
 		window.alert("Email is alright");
 	}
@@ -76,14 +99,14 @@ function MyFunction7(){
 	
 	var str = `${day}/${month}/${year} ${hours}:${minutes}`;
 	
-	window.alert(str);
+	window.alert("Current Date and Time: " + str);
 	
 }
 
 function MyFunction8(){
 	var date = new Date("October 25, 2002");
 	
-	window.alert(date.getDay());
+	window.alert("I was born on " + date.getDay() + "th day of the week");
 }
 
 function MyFunction9(){
@@ -92,15 +115,16 @@ function MyFunction9(){
 	var date3 = new Date("October 25, 1997");
 	var date4 = new Date("October 25, 1984");
 	
-	window.alert(date1.getDay());
-	window.alert(date2.getDay());
-	window.alert(date3.getDay());
-	window.alert(date4.getDay());
+	window.alert("2012 Birthday: " + date1.getDay());
+	window.alert("2010 Birthday: " + date2.getDay());
+	window.alert("1997 Birthday: " + date3.getDay());
+	window.alert("1984 Birthday: " + date4.getDay());
 }
 
 function MyFunction10(){
 	var date = new Date("October 25, 2025");
-	window.alert(date.getDay());
+	
+	window.alert("2025 Birthday: " + date.getDay());
 }
 
 function MyFunction11(){
@@ -130,6 +154,7 @@ function MyFunction11(){
 
 function MyFunction12(){
 	var input = isnumber.value;
+	
 	if(isNaN(input) == 0){
 		window.alert("Input is a number.");
 	}
