@@ -236,6 +236,10 @@ function doAction(actionType){
 	}
 }
 
+function setBorder(){
+	document.getElementById("custommenu").style.border = '5px dashed';
+}
+
 </script>
 
 <button onclick = "MyFunction()">Example1</button>
@@ -302,7 +306,7 @@ function doAction(actionType){
 
 <br />
 
-<div id="custommenu" style="border: 5px dashed; width: 250px; height; 80px;visibility: hidden;">
+<div id="custommenu" onmouseover = "setBorder()" style="width: 250px; height; 80px;visibility: hidden;">
 
 <div style="background-Color: silver; color: navy; font-Size: 10pt;" onclick="doAction('copy');">Copy Document</div>
 
