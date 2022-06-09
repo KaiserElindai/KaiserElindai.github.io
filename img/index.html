@@ -1,0 +1,124 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title></title>
+<script>
+
+var clickTag="";
+(function(tweenui) {
+var timeline;
+var loop=-1;
+var iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+var firefox = navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
+function startPlaying() { if (loop<0) timeline.play(0); else { if (loop>0){loop--;timeline.play(0)}}}
+function g(name) { name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]"); var regex = new RegExp("[\\?&]" + name + "=([^&#]*)","i"); var results = regex.exec(window.location.search); if(results == null) return ""; else return decodeURIComponent(results[1].replace(/\+/g, " ")); }
+function gl(a){for(var i=0;i<a.length;++i){var x=g(a[i]);if (x!='')return x;}return '';}
+var res = function() { var bd = document.getElementsByTagName('body')[0];if (firefox) {bd.style.mozTransform = 'scale(' + window.innerWidth/300 + ')';bd.style.transform = 'scale(' + window.innerWidth/300 + ')';} else {bd.style.zoom = window.innerWidth/300;}if (iOS) { setTimeout(function() {window.onresize = ires},100) } else { window.onresize = res }bd.style.display = '';}
+var ires = function() { if (window.onresize) { window.onresize = null; var bd = document.getElementsByTagName('body')[0]; bd.style.display = 'none'; setTimeout(res, 500); }}
+var loadcnt = 3;
+function tui_go() {
+--loadcnt; if (loadcnt==0) {
+if (typeof(tweenui.exp) == "function") { tweenui.exp(); }
+if (g('s')==1) { res();if (iOS) { window.addEventListener('orientationchange', ires, false) }}
+document.getElementsByTagName('body')[0].style.opacity=1;
+startPlaying();
+}
+}
+tweenui.init = function() {
+timeline = new TimelineLite({paused:true, onComplete:startPlaying});
+TweenLite.defaultOverwrite = "none";
+timeline.insert(new TweenLite({}, 0.0, {}), 6.0);
+var layer_1 = document.getElementById("tui-3");
+timeline.insert(TweenLite.to(layer_1, 2.193018480492813, {css: {scale: 0.27}, ease: Bounce.easeIn}), 1.404517453798768);
+TweenLite.set(layer_1, {css: {autoAlpha: 1.0, x: -84, y: -82, scale: 0.32, rotationX: 0.0, rotationY: 0.0, rotationZ: 0.0}});
+var layer_2 = document.getElementById("tui-4");
+timeline.insert(TweenLite.to(layer_2, 0.8624229979466119, {css: {scale: 0.45}, ease: Bounce.easeOut}), 4.299794661190965);
+timeline.insert(TweenLite.to(layer_2, 0.9609856262833676, {css: {scale: 0.36}, ease: Bounce.easeOut}), 1.404517453798768);
+TweenLite.set(layer_2, {css: {autoAlpha: 0.7045454545454546, x: -310, y: -332, scale: 0.45, rotationX: 0.0, rotationY: 0.0, rotationZ: 0.0}});
+var layer_3 = document.getElementById("tui-5");
+timeline.insert(TweenLite.to(layer_3, 0.3942505133470226, {css: {autoAlpha: 0.0}, ease: Power1.easeIn}), 4.299794661190965);
+timeline.insert(TweenLite.to(layer_3, 0.7268993839835729, {css: {autoAlpha: 1.0}, ease: Power1.easeOut}), 1.6139630390143738);
+TweenLite.set(layer_3, {css: {autoAlpha: 0.0, x: 54, y: 192, scale: 1.0, rotationX: 0.0, rotationY: 0.0, rotationZ: 0.0}});
+tui_go();
+}
+tui_go();
+var imgcnt = 2;
+tweenui.imgcntd = function(e) { var id = e.id.replace(/[^0-9.]/g, "");e.parentNode.removeChild(e);document.getElementById('tui-' + id).appendChild(e); --imgcnt; if (imgcnt==0) { tui_go(); }}
+tweenui.click = function() { if (window.clickTag!="") {window.open(window.clickTag)}}
+var l = gl(["l","clicktag"]);
+if (l!="") { if (g('a')==1) { l = l + encodeURIComponent(window.clickTag) } window.clickTag=l;}
+}(window.tweenui = window.tweenui || {}));</script>
+<style type="text/css">body {
+-webkit-transform-origin: 0 0; transform-origin: 0 0;margin:0px;padding:0px;position:fixed;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing:grayscale;}#tui-animation {
+overflow: hidden;
+position: relative;
+background: #ffffff;
+width: 300px;
+height: 250px;
+-webkit-touch-callout: none;
+-webkit-user-select: none;
+-khtml-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+-webkit-perspective: 500px;
+perspective: 500px;
+}#tui-animation div {
+-webkit-transform-style: preserve-3d;
+transform-style: preserve-3d;
+}#tui-animation img {
+display: block;
+}
+#tui-ct {
+position: absolute;
+width: 300px;
+height: 250px;
+border: 1px solid transparent;
+box-sizing: border-box;
+z-index: 4;
+cursor:pointer;
+}
+#tui-3 {
+position: absolute;
+z-index: 3;
+}
+#tui-4 {
+padding: 200px;
+background: #f1f1f1;
+position: absolute;
+z-index: 2;
+}
+#tui-5 {
+font-family: 'Arial';
+white-space: nowrap;
+color: #0000ff;
+text-align: center;
+background: #f1f1f1;
+text-decoration: none;
+font-size: 30px;
+font-style: normal;
+font-weight: 700;
+position: absolute;
+z-index: 1;
+}</style><meta name="ad.size" content="width=300,height=250"></head><body style="opacity:0"><div id="tui-animation"><div id="tui-ct" onclick="tweenui.click()"></div>
+<div id="tui-3"></div>
+<div id="tui-4"></div>
+<div id="tui-5">Слава Україні</div>
+</div>
+<img src="img/f15dae438889320f2de99f8fc39301ee.png" onLoad="tweenui.imgcntd(this)" id="tui-img-4" />
+<img src="img/64c37126218974d7c9c1401a0f815c46.png" onLoad="tweenui.imgcntd(this)" id="tui-img-3" />
+<script>
+(function(d, t) {
+var s = d.createElement(t);
+s.src = 'https://s0.2mdn.net/ads/studio/cached_libs/tweenmax_1.18.0_499ba64a23378545748ff12d372e59e9_min.js';
+s.onload = s.onreadystatechange = function() {
+var rs = this.readyState; if (rs) if (rs != 'complete') if (rs != 'loaded') return;
+tweenui.init();
+};
+var scr = d.getElementsByTagName(t)[0], par = scr.parentNode; par.insertBefore(s, scr);
+})(document, 'script');
+</script>
+
+</body>
+</html>
