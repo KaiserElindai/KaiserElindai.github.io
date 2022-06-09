@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>LR10-2 Franchevskyy Maksym</h2>
+
+<script>
+
+//Task4
+function checkField(){
+	let pass = document.getElementById("pass").value;
+	let pass2 = document.getElementById("pass2").value;
+	let input = document.getElementById("input").value;
+	let select = document.getElementById("city");
+	
+	if(pass != "" && pass2 != "" && pass == pass2 && input != "" && select.selectedIndex != 0){
+		document.getElementById("btn").disabled = false;
+	}
+}
+
+//Task6
+function isPhoneNumber(){
+	var str = document.getElementById("phoneNum").value;
+	
+	if(!str.length)
+		alert("Not a phone number");
+	
+	var cellPhoneTemplate = new RegExp("[+]?((380)|(0))([356789]{2})[0-9]{7}");
+	str = str.replace(cellPhoneTemplate,"");
+	
+	if(str != "")
+		alert("Not a phone number");
+	else
+		alert("That's a phone number");
+}
+
+//Task7
+function isPostalCode(){
+	var str = document.getElementById("postalCode").value;
+	
+	if(!str.length)
+		alert("Not a postal code");
+	
+	var postalTemplate = new RegExp("790((07)|(12)|(68))");
+	str = str.replace(postalTemplate,"");
+	
+	if(str != "")
+		alert("Not a postal code");
+	else
+		alert("That's a postal code");
+}
+
+//Task8
+function isLvivPhone(){
+	var str = document.getElementById("lvivPhone").value;
+	
+	if(!str.length)
+		alert("Not a Lviv phone");
+	
+	var lvivPhoneTemplate = new RegExp("([(]?(032)|())[)]?[0-9]{3}[-]?[0-9]{2}[-]?[0-9]{2}");
+	str = str.replace(lvivPhoneTemplate,"");
+	
+	if(str != "")
+		alert("Not a Lviv phone");
+	else
+		alert("That's Lviv phone");
+}
+
+//Task9
+function clearTextFromHTMLComments(commentsForEditing) {
+	var commentTemplate = new RegExp("[<!-->]{1,}","g");
+	return commentsForEditing.replace(commentTemplate,"");
+}
+
+//Task10
+function clearTextFromHTMLTags(tagsForEditing) {
+	var tagTemplate = new RegExp("</?[pfontbrhr]{1,}>","g");
+	return tagsForEditing.replace(tagTemplate,"");
+}
+
+//Task11
+function Spaces(spacesForEditing){
+	return spacesForEditing.trim();
+}
+
+//Task12
+function isYear(){
+	var str = document.getElementById("year").value;
+	
+	if(!str.length)
+		alert("Not a year");
+	
+	var yearTemplate = new RegExp("((19)|(20))[0-9]{2}");
+	str = str.replace(yearTemplate,"");
+	
+	if(str != "")
+		alert("Not a year");
+	else
+		alert("That's a year");
+}
+
+</script>
+
+<input type = "text" id = "pass" onkeypress = "checkField()">
+<input type = "text" id = "pass2" onkeypress = "checkField()">
+<input type = "text" id = "input" onkeypress = "checkField()">
+<select id="city" onchange = "checkField()">
+
+	<option>Виберіть місто</option>
+	<option>Львів</option>
+	<option>Київ</option>
+	<option>Одеса</option>
+	<option>Харків</option>
+
+</select>
+<button id = "btn" disabled = "true">Boop</button>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<input type = "text" id = "phoneNum">
+<button onclick = "isPhoneNumber()" id = "check">Check</button>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<input type = "text" id = "postalCode">
+<button onclick = "isPostalCode()" id = "check">Check</button>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<input type = "text" id = "lvivPhone">
+<button onclick = "isLvivPhone()" id = "check">Check</button>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<textarea rows="20" cols="20" id="editor">
+<!-- I dare you to delete me-->
+<!-- You can't do it-->
+<!-- hehehehehe-->
+</textarea >
+<input type="button" value="Clear text" onclick="document.getElementById('editor').
+value=clearTextFromHTMLComments(document.getElementById('editor').value);" >
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<textarea rows="20" cols="20" id="editor2">
+<font>hello</font>
+<br>
+<br>
+<p>beep boop</p>
+</textarea >
+<input type="button" value="Clear text" onclick="document.getElementById('editor2').
+value=clearTextFromHTMLTags(document.getElementById('editor2').value);" >
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<input type = "text" id = "space">
+<button id = "check" onclick="document.getElementById('space').
+value=Spaces(document.getElementById('space').value);">Check</button>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<input type = "text" id = "year">
+<button onclick = "isYear()" id = "check">Check</button>
+
+</body>
+</html>

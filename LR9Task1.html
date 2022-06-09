@@ -24,7 +24,17 @@
 <br/>
 <br/>
 
-<area shape="poly" coords="0,5,10,10,20,5"> 
+<img src = "byb.jpg", id = "img" alt = "myImg" usemap = "#myImg" width = "520" height = "480">
+<map name = "imgmap">
+<area shape="poly" coords="0,5,50,50,200,100" href = "#">
+</map>
+<button onclick = "zoomMap(2,'img')">Increase</button> 
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
 
 <table border="1" cellspacing="0" cellpadding="5" bordercolor="#000000">
 	
@@ -103,7 +113,7 @@ function editPassword(password, messageId, minLength, maxLength){
 function zoomMap(zoom, imageId) { 
 
 	var karta = document.getElementById(imageId); 
-	var areas = document.all.map.areas;
+	var areas = document.getElementsByTagName("area");
 
 	for(var i=0; i<areas.length; i++){
 

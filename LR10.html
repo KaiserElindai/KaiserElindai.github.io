@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+
+//Example1
+function checkFields(){
+	if(document.getElementById("UN").value=="" || document.getElementById("pwd").value == "")
+		document.getElementById("send").disabled = true;
+	else
+		document.getElementById("send").disabled = false;
+}
+
+//Example2
+function handleSelect(){
+	var sel = document.getElementById("city");
+	if(sel.selectedIndex == 0 || sel.selectedIndex == -1)
+		document.getElementById("send2").disabled = true;
+	else
+		document.getElementById("send2").disabled = false;
+}
+
+//Example3
+function addToList(){
+	if(document.getElementById("newElement").value!=""){
+		var sel = document.getElementById("city");
+		var newItem = new Option();
+
+		newItem.text=document.getElementById("newElement").value;
+		newItem.value=sel.options.length-1;
+		sel.add(newItem, sel.length); 
+	}
+}
+
+//Example4
+function deleteItem(){
+	var sel = document.getElementById("city"); 
+	
+	sel.remove(sel.selectedIndex); 
+	sel.selectedIndex = 0; 
+}
+
+//Example5
+function formSubmit(){
+	if(document.getElementById("UN").value !="" && document.getElementById("pwd").value != "")
+		document.getElementById("f1").submit();
+}
+
+//Task2
+function changeStyle(){
+	var chng = document.getElementById("pass");
+	chng.style.backgroundColor = "red";
+	chng.style.color = "white";
+	chng.style.fontSize = "10pt";
+	chng.style.lineHeight = "28px";
+}
+
+//Task3
+function chngTable(){
+	document.getElementById("tr1").style.display = "none";
+	document.getElementById("tr3").style.visibility = "hidden";
+}
+
+</script>
+</head>
+<body>
+<h1>LR10 Franchevskyy Maksym</h1>
+
+<input onkeypress = "checkFields()" type = "text" id = "UN">
+<input onkeypress = "checkFields()" type = "text" id = "pwd">
+<button id = "send" disabled = "true">Send</button>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<select onchange = "handleSelect()" id="city">
+
+	<option>Виберіть місто</option>
+	<option>Львів</option>
+	<option>Київ</option>
+	<option>Одеса</option>
+	<option>Харків</option>
+
+</select>
+
+<button id = "send2" disabled = "true">Send</button>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<input type = "text" id = "newElement">
+
+<button onclick = "addToList()">Add Element</button>
+<button onclick = "deleteItem()">Delete Element</button>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<input onkeypress = "checkFields()" type = "text" id = "UN">
+<input onkeypress = "checkFields()" type = "text" id = "pwd">
+<button onclick = "formSubmit()">Send</button>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<input = "text" id = "pass">
+<button id = "btn" onclick = "changeStyle()">Click</button>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" bordercolor="#000000">
+	
+	<tr id = "tr1">
+		<td>Hello</td>
+		<td>There</td>
+		<td>General</td>
+	</tr>
+	<tr id = "tr2">
+		<td>Kenobi</td>
+		<td>You</td>
+		<td>Are</td>
+	</tr>
+	<tr id = "tr3">
+		<td>A</td>
+		<td>Bold</td>
+		<td>One</td>
+	
+	</table>
+
+<button id = "btn2" onclick = "chngTable()">Change this Beautiful Table</button>
+
+</body>
+
+
+
+</html>
