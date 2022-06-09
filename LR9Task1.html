@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<body onload = "assignFunctionToCheckboxes();">
+<h1>LR9 Task1 Franchevskyy Maksym</br></h1>
+<form>
+	<table>
+		<tr>
+		<td>
+			Введіть пароль:
+		</td>
+		<td>
+			<input type="password" id="pwd1" onkeyup="editPassword(this.id,'message',8,16);">
+		</td>
+		<td>
+			<font id="message" style="font-size: 8pt;"></font>
+		</td>
+		</tr>
+	</table>
+</form>
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+<area shape="poly" coords="0,5,10,10,20,5"> 
+
+<table border="1" cellspacing="0" cellpadding="5" bordercolor="#000000">
+	
+	<tr>
+		<td></td>
+		<td>Назва товару</td>
+		<td>Виробник</td>
+		<td>Ціна</td>
+	</tr>
+	<tr>
+		<td><input type="checkbox" name="goods" value="98"></td>
+		<td>Монітори CRT</td><td>LG</td><td>98</td>
+	</tr>
+	<tr>
+		<td><input type="checkbox" name="goods" value="132"></td>
+		<td>Монітори CRT</td><td>Samsung</td><td>132</td>
+	</tr>
+	<tr>
+		<td><input type="checkbox" name="goods" value="419"></td>
+		<td>Монітори TFT</td><td>Samsung</td><td>419</td>
+	</tr>
+	<tr>
+		<td><input type="checkbox" name="goods" value="68"></td>
+		<td>HDD</td><td>Seagate</td><td>68</td>
+	</tr>
+	<tr>
+		<td><input type="checkbox" name="goods" value="161"></td>
+		<td>HDD</td><td>Hitachi</td><td>161</td>
+	</tr>
+	<tr>
+		<td><input type="checkbox" name="goods" value="14"></td>
+		<td>CD ROM</td><td>LG</td><td>14</td>
+	</tr>
+	<tr>
+		<td><input type="checkbox" name="goods" value="16"></td>
+		<td>CD ROM</td><td>Asus</td><td>16</td>
+	</tr>
+	<tr>
+		<td><input type="checkbox" name="goods" value="32"></td>
+		<td>DVD ROM</td><td>Toshiba</td><td>32</td>
+	</tr>
+	<tr>
+		<td colspan="4" align="center">Сума:&nbsp;<font
+		id="price"></font></td>
+	</tr>
+	
+	</table>
+
+</body>
+
+<script>
+
+//Example1
+function editPassword(password, messageId, minLength, maxLength){ 
+
+	var password = document.getElementById(password); 
+	var message = document.getElementById(messageId); 
+
+	if (password.value.length < minLength){
+		message.innerText = 'Надійний пароль повинен містити не менше ' + minLength + ' символів';
+		message.style.color = '#ff0000'; 
+	}
+	else if (password.value.length > maxLength){
+		message.innerText = 'Довжина паролю не повинна перевищувати ' + maxLength + ' символів';
+		message.style.color = '#ff0000';
+	}
+	else{
+	
+	message.innerText = 'Ok';
+	message.style.color = '#00cc00';
+	return true;
+	}
+}
+
+//Example2
+function zoomMap(zoom, imageId) { 
+
+	var karta = document.getElementById(imageId); 
+	var areas = document.all.map.areas;
+
+	for(var i=0; i<areas.length; i++){
+
+		var coords = (areas[i].coords).split(',');
+	
+		for(var j = 0; j < coords.length; j++){
+			coords[j] = Math.round(coords[j]*zoom);
+		}
+
+		areas[i].coords = coords.join(',');
+	}
+
+	karta.width = Math.round((karta.width)*zoom);
+	karta.height = Math.round((karta.height)*zoom);
+}
+
+//Example3
+function getTotalPrice() {  
+
+	var sum = 0; 
+	var boxes = document.getElementsByName('goods');
+	
+	for(var i = 0; i < boxes.length; i++)
+		if(boxes[i].checked)
+			sum = sum + (new Number(boxes[i].value)); 
+	
+	document.getElementById('price').innerText = sum;
+}
+
+function assignFunctionToCheckboxes() {
+
+	var boxes = document.getElementsByName('goods'); 
+
+	for(var i = 0; i < boxes.length; i++) 
+		boxes[i].onclick = getTotalPrice; 
+
+}
+		
+</script>
+</html>

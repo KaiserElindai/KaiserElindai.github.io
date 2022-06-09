@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<body> 
+<h1>LR9 Task1 Franchevskyy Maksym</br></h1>
+<select id = "list" onchange = "isSelected()">
+	
+	<option value = "1">Choose your option carefully</option>
+	<option value = "3">Are you sure about this one?</option>
+	<option value = "3">Doesn't seem like a good choice to me</option>
+	<option value = "4">This one? Really?</option>
+	<option value = "5">I won't even say anything about this one</option>
+	<option value = "6">...</option>
+	<option value = "7">Congratulations! You chose the worst option</option>
+	<option value = "8">Just don't</option>
+	<option value = "9">You better not choose this</option>
+	<option value = "10">No one will ever bother chosing the last one</option>
+
+</select>
+
+<input type = "button" value = "Confirm" id = "btn" disabled = "true">
+
+</body>
+
+<script>
+
+function isSelected(){
+	var choice = document.getElementById("list");
+	var btn = document.getElementById("btn");
+	
+	if(choice[0].selected){
+		btn.setAttribute("disabled", true);
+	}
+	else{
+		btn.removeAttribute("disabled");
+	}
+}
+		
+</script>
+
+</html>

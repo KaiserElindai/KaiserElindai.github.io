@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<body onload = "assignFunctionToCheckboxes();"> 
+<h1>LR9 Task1 Franchevskyy Maksym</br></h1>
+
+<table border="1" cellspacing="0" cellpadding="5" bordercolor="#000000">
+	
+	<tr>
+		<td><input type="checkbox" name="box"></td>
+		<td><input type="checkbox" name="box"></td>
+	</tr>
+	<tr>
+		<td><input type="checkbox" name="box"></td>
+		<td><input type="checkbox" name="box"></td>
+	</tr>
+	<tr>
+		<td><input type="checkbox" name="box"></td>
+		<td><input type="checkbox" name="box"></td>
+	</tr>
+	<tr>
+		<td><input type="checkbox" name="box"></td>
+		<td><input type="checkbox" name="box"></td>
+	</tr>
+	<tr>
+		<td><input type="checkbox" name="box"></td>
+		<td><input type="checkbox" name="box"></td>
+	</tr>
+	<tr>
+		<td colspan="5" align="center"><font
+		id="message"></font></td>
+	</tr>
+	
+	</table>
+
+</body>
+
+<script>
+
+function moreCheckboxes() {  
+
+	var sum = 0; 
+	var boxes = document.getElementsByName('box');
+	
+	for(var i = 0; i < boxes.length; i++)
+		if(boxes[i].checked)
+			sum ++; 
+	
+	if(sum <= 4){
+		message.innerText = "MORE!!!";
+		message.style.color = "#ff0000";
+	}
+	else{
+		message.innerText = "Nice";
+		message.style.color = "#00cc00";
+	}
+}
+
+function assignFunctionToCheckboxes() {
+
+	var boxes = document.getElementsByName('box'); 
+
+	for(var i = 0; i < boxes.length; i++) 
+		boxes[i].onclick = moreCheckboxes; 
+
+}
+		
+</script>
+
+</html>

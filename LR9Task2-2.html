@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>LR9 Task1 Franchevskyy Maksym</br></h1>
+
+Райони:
+<select onchange="showStreets(this.selectedIndex,'streets');">
+
+	<option>Виберіть район</option>
+	<option>Галицький</option>
+	<option>Франківський</option>
+	<option>Личаківський</option>
+	<option>Сихівський</option>
+	<option>Шевченківський</option>
+	<option>Всі райони</option>
+
+</option>
+
+<select>
+	Вулиці:
+<select id='streets' style='visibility:hidden;'> 
+   
+	<option></option>
+
+<select>
+
+<script type = "text/javascript">
+
+var streetsGal = new Array('Галицька','Ставропігійська','Краківська','Театральна','Вірменська');
+var streetsShev = new Array('Чорновола','Остряниці','Замарстинівська','Топольна','Варшавська');
+var streetsFran = new Array('Сахарова','Наукова','Княгині Ольги','В.Великого');
+var streetsLych = new Array('Личаківська','Пекарська','Нечуя-Левицького','Зелена');
+var streetsSykh = new Array('Хоткевича','Червоної Калини');
+var streetsCombined = new Array(streetsGal, streetsFran, streetsLych, streetsSykh, streetsShev);
+
+var streetsAll = new Array(null, streetsGal.sort(), streetsFran.sort(), streetsLych.sort(), streetsSykh.sort(), streetsShev.sort(), streetsCombined.sort());
+
+function showStreets(regionIndex,selectId) {
+
+	if (regionIndex <= 0) {
+		streetsSelect.style.visibility = 'hidden';
+		return false;
+	}
+
+	var streetsSelect = document.getElementById(selectId);
+	
+	clearSelect(streetsSelect); 
+	streetsSelect.style.visibility = 'visible'; 
+
+	for(var i = 0; i < streetsAll[regionIndex].length; i++){
+		if(streetsAll[regionIndex] == streetsCombined){
+			for(var j = 0; j < streetsAll[regionIndex].length; j++){
+				var newStreet = new Option((streetsAll[regionIndex])[i][j], (streetsAll[regionIndex])[i][j]);
+				streetsSelect.add(newStreet, [i][j]);
+			}
+		}
+		else{
+			for(var i = 0; i < streetsAll[regionIndex].length; i++){
+				var newStreet = new Option((streetsAll[regionIndex])[i], (streetsAll[regionIndex])[i]);
+				streetsSelect.add(newStreet, i);
+			}
+		}
+	}
+}
+
+function clearSelect(selectObject){
+	
+	while(selectObject.length) 
+		selectObject.remove(0);
+}
+
+</script>
+
+</body>
+</html>
