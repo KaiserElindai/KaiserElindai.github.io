@@ -136,13 +136,13 @@
 
             function animate1() {
                 let x = document.getElementById("freeComputer1");
-                if(x.style.animationPlayState === "paused") x.style.animationPlayState = "running";
-                else x.style.animationPlayState = "paused";
+                if(x.style.animationPlayState === "paused") {x.style.animationPlayState = "running";}
+                else {x.style.animationPlayState = "paused";}
             }
 
             function animate4() {
                 let x = document.getElementById("freeComputer4");
-                if(x.style.animationPlayState === "paused") x.style.animationPlayState = "running";
+                if(x.style.animationPlayState == "paused") x.style.animationPlayState = "running";
                 else x.style.animationPlayState = "paused";
             }
 
@@ -150,12 +150,6 @@
                 let x = document.getElementById("freeComputer5");
                 if(x.style.animationPlayState === "paused") x.style.animationPlayState = "running";
                 else x.style.animationPlayState = "paused";
-            }
-
-            function book() {
-                if(document.getElementById("freeComputer1").style.animationPlayState === "running") //реалізувати бронювання
-                else if(document.getElementById("freeComputer4").style.animationPlayState === "running")
-                else if(document.getElementById("freeComputer5").style.animationPlayState === "running")
             }
 
         </script>
@@ -191,13 +185,13 @@
 
             <table id="computer">
                 <tr>
-                    <td><img src="computer.png", id="freeComputer1", onclick="animate1()"width="128", height="128"></td>
+                    <td><img src="computer.png", id="freeComputer1", onclick="animate1()", width="128", height="128"></td>
                     <td><img src="computer.png", id="takenComputer2", width="128", height="128"></td>
                     <td><img src="computer.png", id="takenComputer3", width="128", height="128"></td>
                 </tr>
                 <tr>
                     <td><img src="computer.png", id="freeComputer4", onclick="animate4()", width="128", height="128"></td>
-                    <td><button class="customButton" onclick="book()">Забронювати</button></td>
+                    <td><button class="customButton">Забронювати</button></td>
                     <td><img src="computer.png", id="freeComputer5", onclick="animate5()", width="128", height="128"></td>
                 </tr>
                 </table>
