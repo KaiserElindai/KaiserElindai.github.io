@@ -56,7 +56,7 @@
             }
 
             #showcase {
-                border-spacing: 56px;
+                border-spacing: 32px;
                 margin: auto;
                 font-family: 'e-Ukraine';
                 font-weight: 350;
@@ -81,26 +81,22 @@
 
             #freeComputer1 {
                 animation: pulse 2s infinite;
-                animation-play-state: paused;
+                animation-play-state: running;
             }
 
             #freeComputer4 {
                 animation: pulse 2s infinite;
-                animation-play-state: paused;
+                animation-play-state: running;
             }
 
             #freeComputer5 {
                 animation: pulse 2s infinite;
-                animation-play-state: paused;
-            }
-
-            #showcaseFree {
-                animation: pulse 2s infinite;
-                animation-play-state: paused;
+                animation-play-state: running;
             }
 
             #showcaseActive {
                 animation: pulse 2s infinite;
+                animation-play-state: active;
             }
 
             @keyframes pulse {
@@ -136,8 +132,8 @@
 
             function animate1() {
                 let x = document.getElementById("freeComputer1");
-                if(x.style.animationPlayState === "paused") {x.style.animationPlayState = "running";}
-                else {x.style.animationPlayState = "paused";}
+                if(x.style.animationPlayState === "paused") x.style.animationPlayState = "running";
+                else x.style.animationPlayState = "paused";
             }
 
             function animate4() {
