@@ -170,7 +170,7 @@
 
             function animate1() {
                 let x = document.getElementById("freeComputer1");
-                if(x.style.animationPlayState === "paused") x.style.animationPlayState = "running";
+                if(x.style.animationPlayState == "paused") x.style.animationPlayState = "running";
                 else x.style.animationPlayState = "paused";
             }
 
@@ -182,7 +182,7 @@
 
             function animate5() {
                 let x = document.getElementById("freeComputer5");
-                if(x.style.animationPlayState === "paused") x.style.animationPlayState = "running";
+                if(x.style.animationPlayState == "paused") x.style.animationPlayState = "running";
                 else x.style.animationPlayState = "paused";
             }
 
@@ -219,11 +219,11 @@
 
             <table id="computerTable">
                 <tr>
-                    <td><img src="computer.png", id="freeComputer1", onclick="animate1()", width="128", height="128"></td>
-                    <td><img src="computer.png", id="takenComputer2", width="128", height="128"></td>
-                    <td><img src="computer.png", id="takenComputer3", width="128", height="128"></td>
-                    <td><img src="computer.png", id="freeComputer4", onclick="animate4()", width="128", height="128"></td>
-                    <td><img src="computer.png", id="freeComputer5", onclick="animate5()", width="128", height="128"></td>
+                    <td><img src="computer.png", id = "freeComputer1", onclick="animate1()", width="128", height="128"></td>
+                    <td><img src="computer.png", id = "takenComputer2", width="128", height="128"></td>
+                    <td><img src="computer.png", id = "takenComputer3", width="128", height="128"></td>
+                    <td><img src="computer.png", id = "freeComputer4", onclick="animate4()", width="128", height="128"></td>
+                    <td><img src="computer.png", id = "freeComputer5", onclick="animate5()", width="128", height="128"></td>
                 </tr>
                 <tr>
                     <td></td>
