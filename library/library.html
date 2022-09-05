@@ -162,8 +162,8 @@
             .customButton:active {
                 transform: translateY(1px);
             }
-
-            @media only screen and (max-width: 910px){
+            
+            @media only screen and (max-width: 910px){ 
                 
                 .computer table, .computer thead, .computer tbody, .computer th, .computer td, .computer tr {
                     display: block;
@@ -189,7 +189,7 @@
         </style>
 
         <script>
-
+        
             function animate1() {
                 let x = document.getElementById("freeComputer1");
                 if(x.style.animationPlayState == "paused") x.style.animationPlayState = "running";
@@ -218,6 +218,18 @@
                 let x = document.getElementById("freeComputer5");
                 if(x.style.animationPlayState == "paused") x.style.animationPlayState = "running";
                 else x.style.animationPlayState = "paused";
+            }
+
+            function book(){
+                var name = prompt("Ім'я:");
+                var computer1 = document.getElementById("freeComputer1");
+                var computer2 = document.getElementById("freeComputer2");
+                var computer3 = document.getElementById("freeComputer3");
+                var computer4 = document.getElementById("freeComputer4");
+                var computer5 = document.getElementById("freeComputer5");
+                //if(animationPlayState == "running") add to database as booked
+                var timeStart = prompt("Від:");
+                var timeEnd = prompt("До:");
             }
 
         </script>
@@ -262,7 +274,7 @@
                 <tr>
                     <td></td>
                     <td></td>
-                    <td class="customButtonTd"><button class="customButton">Забронювати</button></td>
+                    <td class="customButtonTd"><button class="customButton" onclick="book()">Забронювати</button></td>
                 </tr>
                 </table>
 
